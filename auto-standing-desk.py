@@ -36,8 +36,9 @@ def setupStandTimes():
 
     return jobOne, jobTwo 
 
-# random stand up times for the day
-jobs = setupStandTimes()
+# test random stand up times for the day
+# jobs = setupStandTimes()
+# print(jobs)
 
 # Generate new times at 8am on M,T,W,T,F
 schedule.every().monday.at("08:00").do(setupStandTimes)
