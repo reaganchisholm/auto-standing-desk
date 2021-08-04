@@ -6,17 +6,17 @@ from time import sleep
 import schedule
 
 led = LED(17)
+led.on() # on == off
 
 # Switches pin off for 1s
 def switchOn():
-    led.on()
+    led.off() # off == on
     sleep(1)
-    led.off()
-    sleep(1)
+    led.on() # on == off 
 
 # Makes desk stand up and then cancels the job
 def standUp():
-    print("Standing Up")
+    print("Time to stand up!")
     switchOn()
     return schedule.CancelJob
 
@@ -35,10 +35,6 @@ def setupStandTimes():
     print(f"Will stand desk up at {randomTimeOne} and {randomTimeTwo} today")
 
     return jobOne, jobTwo 
-
-# test random stand up times for the day
-# jobs = setupStandTimes()
-# print(jobs)
 
 # Generate new times at 8am on M,T,W,T,F
 schedule.every().monday.at("08:00").do(setupStandTimes)
