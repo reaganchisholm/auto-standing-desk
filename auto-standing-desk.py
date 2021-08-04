@@ -24,7 +24,7 @@ def standUp():
 def setupStandTimes():
     randomHourOne = randint(8,11)
     randomMinOne = randint(1,59)
-    randomHourTwo = randint(1,16)
+    randomHourTwo = randint(13,16)
     randomMinTwo = randint(1,59)
 
     randomTimeOne = f"{str(randomHourOne).zfill(2)}:{str(randomMinOne).zfill(2)}"
